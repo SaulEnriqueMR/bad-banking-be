@@ -1,6 +1,6 @@
 import {Schema} from "mongoose";
 
-export const Transaction = new Schema(
+export const AccountTransactionSchema = new Schema(
     {
       type: { type: String, required: true },
       amount: { type: Number, required: true },
