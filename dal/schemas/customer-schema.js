@@ -1,5 +1,5 @@
 import {Schema} from "mongoose";
-import {AccountTransactionSchema} from "./account-transaction-schema";
+import {AccountTransactionSchema} from "./account-transaction-schema.js";
 
 export const CustomerSchema = new Schema(
     {
