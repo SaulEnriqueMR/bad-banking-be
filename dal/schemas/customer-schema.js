@@ -1,12 +1,19 @@
 import {Schema} from "mongoose";
-import {AccountTransactionSchema} from "./account-transaction-schema.js";
 
 export const CustomerSchema = new Schema(
     {
-      email: { type: String, required: true },
+      email: { type: String, required: true, unique: true },
       name: { type: String, required: true },
       balance: { type: Number, required: true, default: 0.00 },
-      transactions: { type: [AccountTransactionSchema], required: false, default: [] }
+      transactions: [{
+            type:  { type: String, required: false },
+            amount: { type: Number, required: false },
+            balanceBefore: { type: Number, required: false },
+            balanceAfter: { type: Number, required: false },
+            originCustomer: { type: String, required: false },
+            destinationCustomer: { type: String, required: false },
+      }],
+      customerId: { type: String, required: false }
     },
     { timestamps: true }
 )

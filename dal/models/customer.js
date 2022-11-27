@@ -1,4 +1,4 @@
 import {CustomerSchema} from "../schemas/customer-schema.js";
 import {model} from "mongoose";
 
-export const Customer = model("Customer", CustomerSchema);
+export const Customer = model("customers", CustomerSchema);

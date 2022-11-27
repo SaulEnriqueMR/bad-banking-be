@@ -10,7 +10,6 @@ const CustomerController = {
       next(error);
     }
   },
-
   save: async (req, res, next) => {
     try {
       const post = await CustomerService.save(req.body);
@@ -20,6 +19,15 @@ const CustomerController = {
       next(error);
     }
   },
+  makeTransaction: async (req, res, next) => {
+    try {
+      const transaction = await CustomerService.makeTransaction(req.body);
+      res.json(transaction);
+    } catch (error) {
+      error.msg = "Error making transaction";
+      next(error);
+    }
+  }
 }
 
 export default CustomerController;

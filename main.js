@@ -6,12 +6,12 @@ import { CustomerRouter } from "./routers/customer-router.js";
 import bodyParser from "body-parser";
 
 mongoose.connect("mongodb://localhost:27017/BadBanking", () => {
-  console.log('MongoDB connected');
+  console.log("MongoDB connected");
 });
 
 const app = express();
 app.use(cors());
-app.use(morgan('tiny'));
+app.use(morgan("tiny"));
 app.use(bodyParser.json());
 
 app.use("/api", CustomerRouter);
